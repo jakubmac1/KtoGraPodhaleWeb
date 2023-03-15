@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kto gra Podhale</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{% static 'ktogra/bs/css/flatly.min.css'%}" />
+		<link rel="stylesheet" href="{% static 'ktogra/styles.css'%}"  />
+
+
+	</head>
+	<body>
+
+		<div class="container-fluid" id="wrapper">
+			<h1><a href="#" style="color: white;">Kto gra Podhale</a></h1>
+						<div id="row">
+				<div class="col-lg-6 col-lg-offset-3" id="content">
+					<div style="text-align: center; margin-bottom: 12px; font-size: 25px;"><p>Mecze podhalańskich drużyn w tym tygodniu: </p></div>
+					{% if 3liga %}<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>3 Liga - Grupa IV: </p></div>
+	{% for match in 3liga %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td> 3 Liga - Grupa IV </td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if 4liga %}<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>4 Liga - Małopolska: </p></div>
+	{% for match in 4liga %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+
+            <td> 4 Liga - Małopolska </td>
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if 5liga %}<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>5 Liga - Małopolska (Wschód): </p></div>
+	{% for match in 5liga %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td> 5 Liga - Małopolska (Wschód) </td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if okregowka %}<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>Klasa okręgowa (Limanowa - Podhale): </p></div>
+	{% for match in okregowka %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td> Klasa Okręgowa </td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if aklasa %}<table class="table table-striped" >
+    <thead >
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>A Klasa - Podhale: </p></div>
+	{% for match in aklasa %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td>A Klasa</td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if bklasa1 %}<table class="table table-striped" >
+    <thead >
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>B Klasa - Podhale - Grupa I: </p></div>
+	{% for match in bklasa1 %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td>B Klasa - Grupa I</td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					{% if bklasa2 %}<table class="table table-striped" >
+    <thead >
+      <tr>
+        <th>Gospodarz</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+
+		<th>Liga</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+	<div style="text-align: center; margin-bottom: 12px; font-size: 30px;"><p>B Klasa - Podhale - Grupa II: </p></div>
+	{% for match in bklasa2 %}
+      <tr>
+
+        <td>{{match.home}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+		<td>{{match.kolejka}}</td>
+
+            <td>B Klasa - Grupa II</td>
+
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>{% endif %}<br>
+					</ul>
+				</div>
+			</div>
+
+			<footer>
+				<div class="row pad">
+					<div class="col-lg-12 text-center">
+						Jakub Maciasz &copy; 2022 <strong>Kto Gra App</strong>
+					</div>
+
+					<div class="col-lg-12 text-center">
+						<a href="https://github.com/jakubmac1" style="color: darkgrey">GitHub</a>
+					</div>
+
+				</div>
+			</footer>
+		</div>
+
+	</body>
+</html>

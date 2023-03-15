@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django CRUD Operations</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Wynik</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Kolejka</th>
+
+      </tr>
+    </thead>
+    <tbody>
+	{% for match in matches %}
+      <tr>
+
+        <td>{{match.home}}</td>
+        <td>{{match.score}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+          {% if match.league_id == 0 %}
+            <td>A Klasa</td>
+          {% elif match.league_id == 1 %}
+            <td> Ekstraklasa </td>
+          {% endif %}
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>
+</div>
+</body>
+</html>

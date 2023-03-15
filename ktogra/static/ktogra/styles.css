@@ -1,0 +1,49 @@
+body {
+	/*background: rgba(46, 71, 48, 0.8);*/
+	background-image: url("links/bg4.jpg");
+	background-attachment: fixed;
+	font-family: 'Oswald', 'Futura', sans-serif;
+	max-width: 100%;
+}
+#wrapper {
+	margin-top: 1% !important;
+	max-width: 100%;
+	min-width: 90%;
+
+}
+#wrapper > h1{
+	margin-bottom: 2%   ;
+	color: white;
+	font-family: 'Anton', sans-serif;
+	font-size: 3.5em;
+	text-align: center;
+}
+#content {
+	background: beige;
+	padding: 2%;
+	border-radius: 20px;
+}
+#content > h2 {
+	font-size: 18%;
+	text-align: center;
+	padding-top: 0;
+}
+.t10 {
+	margin-top: 10%;
+}
+.t20 {
+	margin-top: 20%;
+}
+.todo-completed {
+	text-decoration: line-through;
+	background: rgba(149, 165, 166, .3);
+}
+footer {
+	margin-top: 28%;
+	margin-bottom: 2%;
+	color: white;
+}
+
+.list-group-item {
+    color: black;
+    }

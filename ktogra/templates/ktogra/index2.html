@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>App</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="{% static 'ktograapp/links/style.css'%}"  />
+
+	</head>
+	<body>
+	<div class="info">
+		<br><br><h3>This site is using BeautifulSoup4 for webscraping matches from football data website. It scrapes the data from a website: <a href="https://www2.laczynaspilka.pl/rozgrywki.html">Łączy nas piłka</a>. Choose your league
+				and you will see the timetable. It will show you first the upcoming matches and then the latest.<br><br>This site is still in progress</h3>
+		</div>
+	<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Gospodarz</th>
+		<th>Wynik</th>
+		<th>Gość</th>
+		<th>Data i Godzina</th>
+		<th>Kolejka</th>
+
+      </tr>
+    </thead>
+    <tbody>
+	{% for match in matches %}
+      <tr>
+
+        <td>{{match.home}}</td>
+        <td>{{match.score}}</td>
+		<td>{{match.away}}</td>
+		<td>{{match.time}}</td>
+          {% if match.league_id == 0 %}
+            <td>A Klasa</td>
+          {% elif match.league_id == 1 %}
+            <td> Ekstraklasa </td>
+          {% endif %}
+
+      </tr>
+    {% endfor %}
+	</tbody>
+</table>
+</div>
+<div id="container">
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" class="active">Home</a>
+		  <a href="#">Ekstraklasa</a>
+		  <a href="#">I Liga</a>
+		  <a href="#">II Liga</a>
+	<div class="dropdown">
+  <span>Niższe ligi</span>
+  <div class="dropdown-content">
+    <a href="#">IV Liga Małopolska Wschód</a>
+			  <a href="#">Klasa Okręgowa - Limanowa </a>
+			  <a href="#">Klasa A - Podhale</a>
+			  <a href="#">Klasa B - Podhale gr. I</a>
+			  <a href="#">Klasa B - Podhale gr. II</a>
+  </div>
+</div>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776; Choose league</button>
+</div>
+	{% block content %}
+	{% endblock %}
+	<script>
+		/* Open sidebar */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Close sidebar */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+	</script>
+		<div id="footer">
+			<div class="col-lg-12 text-center" style="color:white;">
+				Jakub Maciasz &copy; 2022 <strong>Football leagues web scraping app</strong>
+			</div>
+			<div class="col-lg-12 text-center">
+				<a href="https://myportfolio970913.herokuapp.com/" style="color: darkgrey">Portfolio</a>
+			</div>
+			<div class="col-lg-12 text-center">
+				<a href="https://github.com/faya22" style="color: darkgrey">GitHub</a>
+			</div>
+			<div class="col-lg-12 text-center">
+				<a href="https://www.linkedin.com/in/jakub-maciasz/" style="color: darkgrey">LinkedIn</a>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
