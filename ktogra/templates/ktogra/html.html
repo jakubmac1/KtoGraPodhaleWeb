@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kto Gra Podhale</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ktogra/bs/css/flatly.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'ktogra/style.css'%}"  />
+</head>
+
+<body>
+    <div class="container-fluid" id="wrapper">
+
+
+
+			<h1><a href="#" style="color: white; font-family: 'Anton';">Kto Gra Podhale</a></h1>
+						<div id="row">
+				<div class="col-lg-6 col-lg-offset-3" id="content">
+					<div style="text-align: center; margin-bottom: 12px; font-size: 25px;"><p>Mecze podhalańskich drużyn w tym tygodniu: </p></div>
+    <main class="table">
+        <br>
+        {% if 3liga %}
+        <section class="table__header">
+            <h1> <a href="http://www.90minut.pl/liga/1/liga12415.html" style="color: black;">3 Liga - Grupa IV:</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in 3liga %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </section>
+
+                    {% endif %}
+                    {% if 4liga %}
+        <section class="table__header">
+            <h1><a href="http://www.90minut.pl/liga/1/liga12398.html" style="color: black;">4 Liga - Małopolska:</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in 4liga %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+                    {% endif %}
+
+
+        {% if 5liga %}
+        <section class="table__header">
+            <h1> <a href="http://www.90minut.pl/liga/1/liga12524.html" style="color: black;">5 Liga - Małopolska (Wschód): </a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in 5liga %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+                    {% endif %}
+
+
+        {% if okregowka %}
+        <section class="table__header">
+            <h1><a href="http://www.90minut.pl/liga/1/liga12531.html" style="color: black;">Klasa Okręgowa (Limanowa - Podhale):</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in okregowka %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+                    {% endif %}
+
+
+
+        {% if aklasa %}
+        <section class="table__header">
+            <h1><a href="http://www.90minut.pl/liga/1/liga12532.html" style="color: black;">A Klasa - Podhale</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in aklasa %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+                    {% endif %}
+
+        {% if bklasa1 %}
+        <section class="table__header">
+            <h1> <a href="http://www.90minut.pl/liga/1/liga12649.html" style="color: black;">B Klasa - Podhale gr. I</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in bklasa1 %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+                    {% endif %}
+        {% if bklasa2 %}
+        <section class="table__header">
+            <h1><a href="http://www.90minut.pl/liga/1/liga12650.html" style="color: black;">B Klasa - Podhale gr. II</a></h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Gospodarz</th>
+		                <th>Gość</th>
+		                <th>Data</th>
+		                <th>Liga</th>
+                        <th>Kolejka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{% for match in bklasa2 %}
+                    <tr>
+                        <td>{{match.home}}</td>
+		                <td>{{match.away}}</td>
+		                <td>{{match.time}}</td>
+                        <td>{{match.league}}</td>
+		                <td>{{match.gameweek}}</td>
+                    </tr>
+                                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+                    {% endif %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+                </div>
+                        </div>
+    </div>
+</body>
+
+</html>

@@ -38,7 +38,7 @@ def home(request):
             else:
                 gw += 1
 
-    return render(request, 'ktogra/index.html',
+    return render(request, 'ktogra/html.html',
                   {'3liga': leagues[3], '4liga': leagues[4], '5liga': leagues[5], 'okregowka': leagues[6],
                    'aklasa': leagues[7], 'bklasa1': leagues[8], 'bklasa2': leagues[9],})
 
